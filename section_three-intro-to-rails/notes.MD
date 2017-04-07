@@ -30,3 +30,7 @@ html.erb files to be views.
 > Whenever we want to call embedded ruby code in the html docs, we use '<% %>'
 > However when we want to display something to the page you have to put '=' after wards like so
 > <%= 'blahblah %>'
+
+
+# Routing
+> To make a page the default home page simply type 'root' before it in routes, like so: root 'pages#home'
