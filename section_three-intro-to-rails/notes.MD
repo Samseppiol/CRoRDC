@@ -15,3 +15,15 @@
 > Model sends back information to controller
 
 > Controller renders view
+
+# Rake Routes
+> To find the routes in your app use 'rake routes'
+
+# Setup of two easy pages
+
+> First add the route, then add the controller then add the html doc to the views.
+
+# Links
+> Whenever we want to call embedded ruby code in the html docs, we use '<% %>'
+> However when we want to display something to the page you have to put '=' after wards like so
+> <%= 'blahblah %>'
