@@ -21,7 +21,10 @@
 
 # Setup of two easy pages
 
-> First add the route, then add the controller then add the html doc to the views.
+> First add the route: get 'pages/home', to: 'pages#home'
+then add the controller: create a rb in controllers, define a class with methods that you are calling, eg home, about would be def home end def about end.
+then add the html doc to the views, create a new file to be called by the controller and create
+html.erb files to be views.
 
 # Links
 > Whenever we want to call embedded ruby code in the html docs, we use '<% %>'
