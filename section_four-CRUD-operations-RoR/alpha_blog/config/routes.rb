@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'about', to: 'pages#about'
+
+  # This resources code is magical. This gives us all the CRUD elements.
+  resources :articles
 end

@@ -64,3 +64,8 @@ This will go directly in to the database so we don't have to run article.save
   database which is very bad. So the point of the article model is to add validations to make sure that doesnt happen! With validators in place if you try to push to the database it will rollback and not save.
 
 > But what if we have an error and we don't know why. You simply type article.errors.any? if true then there are obviously errors and false then no errors. If you have errors you simply type article.errors.full_messages  in this case it will say something like "title cant be blank" which means our validator code is working.
+
+# Routing
+
+> So we created new routes for our new articles page. Simply by typing 'resources :articles', rails appears
+to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, #update, #update and #destroy.

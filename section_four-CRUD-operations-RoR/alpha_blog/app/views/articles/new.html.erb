@@ -1,0 +1,22 @@
+<h1>Create an article here!</h1>
+
+<!-- This is a model backed form. -->
+
+<!-- Embedded ruby code calling the class instance variable @article. and iterating through it -->
+
+<%= form_for @article do |f| %>
+<p>
+  <!-- Pass in the variable and give it the value. -->
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <!-- Pass in the variable and give it the value. -->
+  <%= f.label :description%> <br>
+  <%= f.text_area :description%>
+</p>
+
+<%= f.submit %>
+
+<% end %>
