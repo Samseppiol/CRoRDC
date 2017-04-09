@@ -60,7 +60,7 @@ This will go directly in to the database so we don't have to run article.save
 > Once again set a variable. x = Article.find(3) and then x.destroy. Run Article.all to check to see if it has deleted.
 
 ## Testing validation
->  # We discovered in our rails console that if you enter an empty article it will still register to the
-  #database which is very bad. So the point of the article model is to add validations to make sure that doesnt happen! With validators in place if you try to push to the database it will rollback and not save.
+> We discovered in our rails console that if you enter an empty article it will still register to the
+  database which is very bad. So the point of the article model is to add validations to make sure that doesnt happen! With validators in place if you try to push to the database it will rollback and not save.
 
 > But what if we have an error and we don't know why. You simply type article.errors.any? if true then there are obviously errors and false then no errors. If you have errors you simply type article.errors.full_messages  in this case it will say something like "title cant be blank" which means our validator code is working.
