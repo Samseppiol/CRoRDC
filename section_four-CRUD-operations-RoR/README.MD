@@ -69,3 +69,10 @@ This will go directly in to the database so we don't have to run article.save
 
 > So we created new routes for our new articles page. Simply by typing 'resources :articles', rails appears
 to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, #update, #update and #destroy.
+
+# Creating Articles
+> So basically we created a controller, a model and a view for our articles.
+> We had to define a number of methods in the articles controller starting with the 'new' method which basically just called the article class model and assigned to the "@article" instance variable. We then defined a create method, calling @article = Article.new(article_params) where article params is a private method we call for, and @article.save to save the inputted article to the database. We then define our private method article_params where we set the parameters of the key 'article' and permit the parameters we want to specify, in this instance the title and the description. With the code:
+> def article_params
+params.require(:article).permit(:title, :description)
+end
