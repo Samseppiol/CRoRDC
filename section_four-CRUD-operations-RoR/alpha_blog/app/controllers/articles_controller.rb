@@ -11,10 +11,18 @@ class ArticlesController <ApplicationController
     #render plain: params[:article].inspect
     #Creating our instance variable and passing in a method to it.
     @article = Article.new(article_params)
-    @article.save
-    #Though this works and the article saves, the application doesn't know what to display to the user.
-    #So we simply redirect
-    # redirect_to articles_show(@article)
+    #So basically if the article doesn't save we just want to render a new view
+    if @article.save
+      flash[:notice] = "Successful Creation of Article"
+      redirect_to article_path(@article)
+    else
+      render :new
+    end
+  end
+
+  def show
+    #Basically, we want to identify an article by its id/number.
+    @article = Article.find(params[:id])
   end
 
   private

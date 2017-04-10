@@ -77,3 +77,15 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 > def article_params
     params.require(:article).permit(:title, :description)
   end
+
+# New And Show Actions
+
+> In our articles controller we want to write an if statement to basically say if @article.save then we want to show a message. We do this by writing flash[:notice] = "Messsage we want to display" else render a new view. When we use render, we can either do 'render :new' or "render 'new'"
+
+## Application.html.erb
+
+> This view document is the document that every other view inherits from, basically anything on this page will be displayed to all other pages. So we have to create a view/display for our flash notice code we wrote before simply by writing flash.each do |name, msg| then passing in msg in an unordered list in embedded ruby and remembering to end the loop.
+
+## Displaying our validation errors
+
+> If our validation stops the user from creating an article on the web interface we need to give them an error message as to why. We simply go to the new.html.erb file and write an if  statement. Basically if @article.errors.any?, we create a loop which will display the errors like this: @article.errors.full_messages.each do |msg| then display it in an unordered list, like so: <li><%=msg%></li>
