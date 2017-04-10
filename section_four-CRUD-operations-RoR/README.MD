@@ -74,8 +74,8 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 > So basically we created a controller, a model and a view for our articles.
 > We had to define a number of methods in the articles controller starting with the 'new' method which basically just called the article class model and assigned to the "@article" instance variable. We then defined a create method, calling @article = Article.new(article_params) where article params is a private method we call for, and @article.save to save the inputted article to the database. We then define our private method article_params where we set the parameters of the key 'article' and permit the parameters we want to specify, in this instance the title and the description. With the code:
 
-> def article_params
-    params.require(:article).permit(:title, :description)
+> def article_params<br>
+    params.require(:article).permit(:title, :description)<br>
   end
 
 # New And Show Actions
@@ -89,3 +89,13 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 ## Displaying our validation errors
 
 > If our validation stops the user from creating an article on the web interface we need to give them an error message as to why. We simply go to the new.html.erb file and write an if  statement. Basically if @article.errors.any?, we create a loop which will display the errors like this: @article.errors.full_messages.each do |msg| then display it in an unordered list, like so: <li><%=msg%></li>
+
+# Edit Articles
+
+> We first start off by checking the route with rails/rake routes in the terminal. It shows the edit route is /articles/:id/edit so articles, whatever the article id is and then edit. If we type this in to the browser we get an error which says the action edit could not be found in ArticlesController. So we have to go create a method.
+<li> Create a method in the controller </li>
+<li> Create a template in views </li>
+<li> Because the code/output will be 99% the same we copy the code from our new.html.erb </li>
+<li> Create an update method </li>
+<li> Basically the same as the create method we defined before </li>
+<li> Another if statement, if article.update(article_params), flash[:notice] "message to display", else render :edit </li>

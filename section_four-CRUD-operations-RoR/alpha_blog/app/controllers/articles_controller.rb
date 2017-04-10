@@ -5,6 +5,21 @@ class ArticlesController <ApplicationController
     @article = Article.new
   end
 
+  def edit
+    #basically so our edit method can see our article instance and we want it to see our article instance id.
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "Edit Successful"
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
+  end
+
   def create
     #We use this code to display that our data is actually being recieved and passed through.
     #It will display as a hash.
@@ -24,6 +39,8 @@ class ArticlesController <ApplicationController
     #Basically, we want to identify an article by its id/number.
     @article = Article.find(params[:id])
   end
+
+
 
   private
 
