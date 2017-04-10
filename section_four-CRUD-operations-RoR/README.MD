@@ -80,7 +80,7 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 
 # New And Show Actions
 
-> In our articles controller we want to write an if statement to basically say if @article.save then we want to show a message. We do this by writing flash[:notice] = "Messsage we want to display" else render a new view. When we use render, we can either do 'render :new' or "render 'new'"
+> In our articles controller we want to write an if statement to basically say: <br> if @article.save<br> flash[:notice] = "Messsage we want to display"<br> else<br> render :new <br>end<br>a new view. When we use render, we can either do 'render :new' or "render 'new'"
 
 ## Application.html.erb
 
@@ -98,4 +98,4 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 <li> Because the code/output will be 99% the same we copy the code from our new.html.erb </li>
 <li> Create an update method </li>
 <li> Basically the same as the create method we defined before </li>
-<li> Another if statement, if article.update(article_params), flash[:notice] "message to display", else render :edit </li>
+<li> Another if statement,<br> if article.update(article_params)<br> flash[:notice] "message to display", else render :edit<br> end </li>
