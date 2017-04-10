@@ -84,11 +84,11 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 
 ## Application.html.erb
 
-> This view document is the document that every other view inherits from, basically anything on this page will be displayed to all other pages. So we have to create a view/display for our flash notice code we wrote before simply by writing flash.each do |name, msg| then passing in msg in an unordered list in embedded ruby and remembering to end the loop.
+> This view document is the document that every other view inherits from, basically anything on this page will be displayed to all other pages. So we have to create a view/display for our flash notice code we wrote before simply by writing: <br>flash.each do |name, msg|<br> <%=msg%> <br> end
 
 ## Displaying our validation errors
 
-> If our validation stops the user from creating an article on the web interface we need to give them an error message as to why. We simply go to the new.html.erb file and write an if  statement. Basically if @article.errors.any?, we create a loop which will display the errors like this: @article.errors.full_messages.each do |msg| then display it in an unordered list, like so: <li><%=msg%></li>
+> If our validation stops the user from creating an article on the web interface we need to give them an error message as to why. We simply go to the new.html.erb file and write an if  statement. Basically if @article.errors.any?, we create a loop which will display the errors like this: @article.errors.full_messages.each do |msg|<br> <br><%=msg%><br> end
 
 # Edit Articles
 
