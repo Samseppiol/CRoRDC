@@ -99,3 +99,7 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 <li> Create an update method </li>
 <li> Basically the same as the create method we defined before </li>
 <li> Another if statement,<br> if article.update(article_params)<br> flash[:notice] "message to display", else render :edit<br> end </li>
+
+# List and Layout
+
+> We want to create a page to display all our articles. We create an index method in our articles controller like so:<br> def index <br> @articles = Articles.all <br> end <br> Basically defining our instance variable as all Articles. We then create a view for what we want to display, index.html.erb. We display the articles in a table by iterating over the instance variable like so: <br> @articles.each do |article| <br> then displaying article.title and article.description in a table form.

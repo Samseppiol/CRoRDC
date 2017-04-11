@@ -1,5 +1,9 @@
 class ArticlesController <ApplicationController
 
+  def index
+    @articles = Article.all
+  end
+
   def new
     #Defining our instance variable of @ article = @article class.new
     @article = Article.new
