@@ -1,4 +1,5 @@
 class ArticlesController <ApplicationController
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
     @articles = Article.all
@@ -11,11 +12,9 @@ class ArticlesController <ApplicationController
 
   def edit
     #basically so our edit method can see our article instance and we want it to see our article instance id.
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:notice] = "Edit Successful"
       redirect_to article_path(@article)
@@ -41,11 +40,9 @@ class ArticlesController <ApplicationController
 
   def show
     #Basically, we want to identify an article by its id/number.
-    @article = Article.find(params[:id])
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "Deletion Successful"
     redirect_to articles_path
@@ -53,6 +50,10 @@ class ArticlesController <ApplicationController
 
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     #Basically what we do here is require the paramaters of the key, in this case article.
