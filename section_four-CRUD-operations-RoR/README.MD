@@ -93,12 +93,12 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 # Edit Articles
 
 > We first start off by checking the route with rails/rake routes in the terminal. It shows the edit route is /articles/:id/edit so articles, whatever the article id is and then edit. If we type this in to the browser we get an error which says the action edit could not be found in ArticlesController. So we have to go create a method.
-<li> Create a method in the controller </li>
-<li> Create a template in views </li>
-<li> Because the code/output will be 99% the same we copy the code from our new.html.erb </li>
-<li> Create an update method </li>
-<li> Basically the same as the create method we defined before </li>
-<li> Another if statement,<br> if article.update(article_params)<br> flash[:notice] "message to display", else render :edit<br> end </li>
+> <li> Create a method in the controller </li>
+> <li> Create a template in views </li>
+> <li> Because the code/output will be 99% the same we copy the code from our new.html.erb </li>
+> <li> Create an update method </li>
+> <li> Basically the same as the create method we defined before </li>
+> <li> Another if statement,<br> if article.update(article_params)<br> flash[:notice] "message to display", else render :edit<br> end </li>
 
 # List and Layout
 
@@ -110,4 +110,6 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 ## Creating a partial
 
 > <li> Create a view with _ at the beginning </li>
-<li> For example: '_form.html.erb' </li> _
+> <li> For example: '_form.html.erb' </li> _
+> <li> To call a partial simply write<br. <%= render 'form' %>
+> However you may have to specify the folder routes for example<br> <%= render 'layouts/messages' %>
