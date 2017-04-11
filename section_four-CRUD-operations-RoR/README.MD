@@ -121,3 +121,9 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 
 > We then need to create a button/tag for the user to click to actually use this method. Which is essentially just another table column, however we do have to specify to rails the method is delete and we want to display a warning message asking the user if they are sure. So our code will look like this:<br>
 <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+
+# Cleaning up
+
+> In our articles controller we have repeated ourselves a few times, in particular writing out:<br> @article = Article.find(params[:id])<br> four times. So we create a private method to free up our code and stick to the dry principles. However we don't actually call this method in all the other methods. What we do is we call it with before_action. This basically says we want to call this before anything else in each method. We also have to declare which methods we want to call it in, because all of them don't need it, only four of them do. So above all methods but  below the class name we write: <br>
+> before_action :set_article, only: [:edit, :update, :show, :destroy] <br>
+Where set_article is the name of our method and we want to apply it to our edit, update, show and destroy methods.
