@@ -1,0 +1,15 @@
+<h1>Showing selected article</h1>
+
+<p>
+  Title: <%= @article.title %>
+</p>
+<p>
+  Description: <%= @article.description %>
+</p>
+
+<p>
+  <%= link_to "Edit Article", edit_article_path(@article) %>
+</p>
+<p>
+<%= link_to "Article Listings", articles_path %>
+</p>
