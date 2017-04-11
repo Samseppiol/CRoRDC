@@ -111,5 +111,13 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 
 > <li> Create a view with _ at the beginning </li>
 > <li> For example: '_form.html.erb' </li> _
-> <li> To call a partial simply write<br. <%= render 'form' %>
+> <li> To call a partial simply write<br> <%= render 'form' %>
 > However you may have to specify the folder routes for example<br> <%= render 'layouts/messages' %>
+
+# Destroy
+> We first create a method within our articles controller. If we want to delete an article we have to know which one to delete, we want to display a message and we want to redirect the user once the action has completed, so the method looks like this:
+
+> def destroy <br> @article = Article.find(params[:id]) <br> @article.destroy <br> flash[:notice] = "Article Deleted?" <br> redirect_to articles_path <br> end
+
+> We then need to create a button/tag for the user to click to actually use this method. Which is essentially just another table column, however we do have to specify to rails the method is delete and we want to display a warning message asking the user if they are sure. So our code will look like this:<br>
+<%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
