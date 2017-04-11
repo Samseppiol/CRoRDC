@@ -1,35 +1,3 @@
 <h1>Create an article here!</h1>
 
-<!-- This is a model backed form. -->
-
-<!-- Embedded ruby code calling the class instance variable @article. and iterating through it -->
-
-<!-- If our validation prevents an article from being posted on the website, we need to display an error message -->
-<% if @article.errors.any? %>
-<h2>The following errors prevented article being created:</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li> <%= msg %> </li>
-  <% end %>
-</ul>
-<% end %>
-<%= form_for @article do |f| %>
-<p>
-  <!-- Pass in the variable and give it the value. -->
-  <%= f.label :title %> <br>
-  <%= f.text_field :title %>
-</p>
-
-<p>
-  <!-- Pass in the variable and give it the value. -->
-  <%= f.label :description%> <br>
-  <%= f.text_area :description%>
-</p>
-
-<%= f.submit %>
-
-<% end %>
-
-<p>
-<%= link_to "Article Listings", articles_path %>
-</p>
+<%= render 'form' %>

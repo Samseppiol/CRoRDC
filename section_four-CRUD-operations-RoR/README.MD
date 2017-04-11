@@ -103,3 +103,11 @@ to generate 8 new routes for us. Articles: #index, #create, #new, #edit, #show, 
 # List and Layout
 
 > We want to create a page to display all our articles. We create an index method in our articles controller like so:<br> def index <br> @articles = Articles.all <br> end <br> Basically defining our instance variable as all Articles. We then create a view for what we want to display, index.html.erb. We display the articles in a table by iterating over the instance variable like so: <br> @articles.each do |article| <br> then displaying article.title and article.description in a table form.
+
+# Partials
+> Partial is used to extract away redundancies in our code. For example our new and our edit views are virtually identical, so similar that when we created the edit page we just copy and pasted all the code. So instead of having two pages and lots of code we create a partial.
+
+## Creating a partial
+
+> <li> Create a view with _ at the beginning </li>
+<li> For example: '_form.html.erb' </li> _
