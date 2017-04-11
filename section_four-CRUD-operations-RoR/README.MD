@@ -1,3 +1,7 @@
+# Finished 11-04-2017
+> This section was fantastic for me. I feel as if I really learned a lot. The biggest thing I have noticed, when I try to go ahead and guess what Mashrur is going to do, I run in to a lot of errors, naturally. However I believe I can now read the rails errors a lot better and it makes a lot more sense to me when it tells me what is wrong or why it isn't working.
+
+
 # Rails Naming Conventions
 
 ## For Example Article
