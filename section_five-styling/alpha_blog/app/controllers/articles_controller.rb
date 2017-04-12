@@ -16,7 +16,7 @@ class ArticlesController <ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "Edit Successful"
+      flash[:success] = "Edit Successful"
       redirect_to article_path(@article)
     else
       render :edit
@@ -31,7 +31,7 @@ class ArticlesController <ApplicationController
     @article = Article.new(article_params)
     #So basically if the article doesn't save we just want to render a new view
     if @article.save
-      flash[:notice] = "Successful Creation of Article"
+      flash[:success] = "Successful Creation of Article"
       redirect_to article_path(@article)
     else
       render :new
@@ -44,7 +44,7 @@ class ArticlesController <ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "Deletion Successful"
+    flash[:danger] = "Deletion Successful"
     redirect_to articles_path
   end
 
