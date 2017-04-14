@@ -56,6 +56,19 @@ $navbar-default-bg: black;
 .description {
   margin-top: 0;
 }
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-body {
+  border-top: 2px solid #eaeaea;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
 .footer {
   text-align: center;
   margin-top: 50px;
