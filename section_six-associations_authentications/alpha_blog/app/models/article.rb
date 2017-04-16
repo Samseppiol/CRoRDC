@@ -4,7 +4,9 @@ class Article < ActiveRecord::Base
 
   #We also want to add length validation because if a title and or desacription is one character, that doesn't
   # make much sense.
+  belongs_to :user
   validates :title, presence: true, length: { minimum: 3, maximum: 50}
   validates :description, presence: true, length: { minimum: 10, maximum: 300}
+  validates :user_id, presence: true
 
 end
