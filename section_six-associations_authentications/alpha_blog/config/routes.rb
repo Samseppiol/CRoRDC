@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # This resources code is magical. This gives us all the CRUD elements.
   resources :articles
+
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
