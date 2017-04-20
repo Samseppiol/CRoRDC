@@ -29,7 +29,7 @@ class ArticlesController <ApplicationController
     #render plain: params[:article].inspect
     #Creating our instance variable and passing in a method to it.
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     #So basically if the article doesn't save we just want to render a new view
     if @article.save
       flash[:success] = "Successful Creation of Article"
